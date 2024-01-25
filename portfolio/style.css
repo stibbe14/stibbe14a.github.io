@@ -1,0 +1,433 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+}
+
+:root{
+    --bg-color:black;
+    --main-color:#137DC5;
+    --extra-color: #FB9C2A;
+    --text-color:#333;
+    --secondtext-color:#555;
+    --white-color:white;
+    --cover-color: linear-gradient( 45deg, #00abf0, #006e9a) ;
+    --pages-color: linear-gradient( 90deg, #fff, #ddd) ;
+    --border: .125rem solid #006e9a;
+    --box-shadow: 0 0 .6rem #000;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:var(--bg-color) ;
+    color: var(--text-color);
+    background-image: url(images/live1.gif);
+    
+}
+
+.maincover{
+    position: relative;
+    width: 900px;
+    height: 620px;
+    padding: 32px;
+   
+}
+
+.cover{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--cover-color);
+    box-shadow: var(--box-shadow);
+    border-top-left-radius: .6rem;
+    border-bottom-left-radius: .6rem;
+    transform-origin: right;
+}
+
+.cover.cover-links{
+    z-index: -1;
+}
+
+.cover.cover-rechts.turn{
+    transform: rotateY(180deg);
+}
+
+.book{
+    position:  relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.book .book-pagina{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: var(--pages-color);
+    box-shadow: 0 0 .6rem #000;
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+}
+
+.profiel-pagina{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profiel-pagina img{
+ max-width: 180px;
+ border-radius: 50%;
+ border: .25rem solid var(--main-color);
+ margin-bottom: .8rem;
+ width: 200px;
+ height: 200px;
+}
+
+.profiel-pagina h1{
+    font-size: 2.7rem;
+    line-height: 1;
+}
+
+.profiel-pagina h3{
+    font-size: 1.5rem;
+    color: var(--extra-color);
+}
+
+.social-media{
+    margin: .6rem 0 .8rem;
+}
+
+.social-media a{
+    display: inline-flex;
+    justify-content: center ;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: var(--border);
+    border-radius: 50%;
+    font-size: 1.3rem;
+    color: var(--main-color);
+    margin: o .2rem;
+    transition: .5s;
+}
+
+.social-media a:hover{
+    background: var(--main-color);
+    color: var(--white-color);
+}
+
+.profiel-pagina p{
+    text-align: justify;
+}
+
+
+.btn-box{
+margin-top: 1.2rem;
+}
+
+.btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 9.5rem;
+    height: 3rem;
+    background: var(--extra-color);
+    border: var(--border);
+    border-radius: .3rem;
+    font-size: 1rem;
+    color: var(--white-color);
+    font-weight: 500;
+    margin: 10px;
+    transition: .5s;
+}
+
+.btn:hover{
+    background: transparent;
+    color: var(--extra-color);
+}
+
+ .btn-box .btn:nth-child(2){
+    background: transparent;
+    color: var(--extra-color);
+ }
+
+ .btn-box .btn:nth-child(2):hover{
+    background: var(--extra-color);
+    color: var(--white-color);
+ }
+
+.book-pagina.rechts{
+    position: absolute;
+    right: 0;
+    transform-style: preserve-3d;
+    transform-origin: left;
+}
+
+.book-pagina.rechts.turn{
+    transform: rotateY(-180deg);
+}
+
+
+.book-pagina .pagina-voor,
+.book-pagina .pagina-achter{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--pages-color);
+    padding: 1.5rem 2rem;
+}                   
+
+
+
+.book-pagina .pagina-achter{
+    transform: rotateY(180deg) translateZ(1px);
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 1.6rem;
+}
+
+
+.work-box{
+    border-left: var(--border);
+}
+
+.work-box .work-content{
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 1.2rem;
+}
+
+.work-box .work-content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -0.65rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+
+.work-content .jaar{
+    color: var(--extra-color);
+}
+
+.work-content .jaar i {
+margin-right: .4rem;
+}
+
+.nummerpagina{
+    position: absolute;
+    bottom: 1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.volgendepaginaknop{
+    position: absolute;
+    bottom: .9rem;
+    right: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--secondtext-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.volgendepaginaknop:hover{
+    color: var(--main-color);
+}
+
+.volgendepaginaknop.terug{
+    left: 1.5rem;
+}
+
+.skills-box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.skills-box .skills-content{
+    flex: 1 1 20rem;
+}
+
+.skills-content h3{
+    font-size: 1.3rem;
+    line-height: 1;
+    margin-bottom: .6rem;
+}
+
+.skills-box .content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+}
+
+.skills-box .content span{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 5rem;
+    border: var(--border);
+    border-radius: .3rem;
+    font-weight: 600;
+    transition: .3s ease;
+}
+
+.skills-box .content span:hover{
+    box-shadow: var(--box-shadow);
+}
+
+.skills-box .content i{
+    font-size: 3rem;
+    color: var(--extra-color);
+}
+
+.portfolio-box .img-box{
+    display: flex;
+    width: 100%; height: 15rem;
+    border: var(--border);
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.portfolio-box .img-box img{
+    width: 100%;
+    object-fit: cover;
+    transition: .5s ease;
+    border-radius: .5rem;
+}
+
+.portfolio-box .img-box:hover img{
+    transform: scale(1.1);
+}
+
+.info-box{
+    margin: .2rem 0 .5rem;
+}
+
+.info-box .info-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.info-box .info-title h3{
+    font-size: 1.3rem;
+}
+
+.info-box .info-title a{
+    display: flex;
+    align-items: center;
+    color: var(--main-color);
+}
+
+.info-box .info-title a i{
+    margin-left: .3rem  ;
+}
+
+.info-box p:nth-of-type(1){
+    font-weight: 600;
+}
+
+.portfolio-box .btn-box{
+    display: flex;
+    justify-content: center;
+}
+
+.contact-box{
+    text-align: center;
+}
+
+.contact-box .field{
+    width: 100%;
+    background: transparent;
+    border: var(--border);
+    border-radius: .3rem;
+    padding: .8rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.contact-box .field::placeholder{
+    color: var(--text-color);
+}
+
+.contact-box textarea{
+    resize: none;
+    height: 12rem;
+}
+
+.contact-box .btn{
+    cursor: pointer;
+}
+
+.naar-profiel{
+    position: absolute;
+    bottom: 1.2rem;
+    right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: var(--border);
+    border-radius: .3rem;
+    font-size: 1.1rem;
+    color: var(--extra-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.naar-profiel:hover{
+    background: var(--extra-color);
+    color: var(--main-color);
+}
+
+.naar-profiel p{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(.5);
+    font-size: 1rem;
+    opacity: 0;
+    transition: .5s;
+}
+
+.naar-profiel:hover p{
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    top: -1.8rem;
+
+}
+
+@media only screen and (max-width: 700px) {
+    body {
+      
+    }
+  }
